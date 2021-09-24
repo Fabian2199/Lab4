@@ -4,14 +4,6 @@ app.use(express.static('public'));
 app.use(express.json());
 const port = 4000;
 
-const httpServer = require("http").createServer();
-const io = require("socket.io")(httpServer,{
-    cors:{
-        origin: `http://localhost:${port}`,
-    },
-});
-httpServer.listen(4001);
-
 date = new Date();
 function setTime(hours, minutes, seconds){
     date.setHours(hours);
@@ -29,13 +21,18 @@ setInterval(()=>{
     io.emit("time", time); 
 },1000);
 
-app.listen(port, ()=>{
+const server= app.listen(port, ()=>{
     console.log(`App is listenign at port ${port}`)
     let hours = parseInt(getRandomArbitrary(0,24))
     let minutes = parseInt(getRandomArbitrary(0,60))
     let seconds = parseInt(getRandomArbitrary(0,60))
     setTime(hours,minutes,seconds)
 });
+
+//Web Sockets
+const SocketIO = require('socket.io');
+const io = SocketIO(server);
+
 app.post('/timechange',(req, res) =>{
     const time = req.body;
     setTime(time.hours, time.minutes, time.seconds);

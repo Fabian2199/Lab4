@@ -1,4 +1,4 @@
-const socket = io.connect("http://localhost:4001")
+const socket = io();
 const xhr =  new XMLHttpRequest();
 
 function showTime(date){
