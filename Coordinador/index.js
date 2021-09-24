@@ -1,7 +1,10 @@
 const express = require('express');
+const exec = require('child_process').exec;
+const readLastLines = require('read-last-lines')
 const app = express();
 const axios = require("axios");
 app.use(express.static('public'));
+
 const port = 5000;
 
 let dateServer = new Date();
@@ -14,8 +17,8 @@ app.listen(port, () => {
 	console.log(`App is listening to port ${port}`);
   addServer();
   monitor();
-  setTimeServer();
-  statusTime();
+  //setTimeServer();
+  //statusTime();
 }); 
 
 app.get("/", (req, res) => {
@@ -133,8 +136,8 @@ function monitor(){
       for (var i = 0; i < lines.length; i++) {
          data = lines[i].split(' ');
          serverIndex = servers.findIndex(ss => ss.port == data[1])
-     
-          if(serverIndex != undefined){
+         console.log(data)
+          /*if(serverIndex != undefined){
               servers[serverIndex].monitor.time = data[0];
                   if (data[2]=="server"){
                       servers[serverIndex].monitor.status = true
@@ -142,8 +145,8 @@ function monitor(){
                   else {
                       servers[serverIndex].monitor.status = false
                   }  
-          }
-          console.log(servers[serverIndex])
+          }*/
+          //console.log(servers[serverIndex])
       }
     });
   },1000);
