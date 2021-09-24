@@ -1,0 +1,56 @@
+@font-face {
+    font-family: customFont;
+    src: url(digital-dream.skew-narrow.ttf);
+}
+body{
+    background-color: #F7F7FF;
+}
+#clock-modifier{
+    background-color: #0d1321;
+    margin: 0 auto;
+    display: inline-flexbox;
+    width:40%;
+    height: 200px;
+    align-items: center;
+}
+#modifiers{
+    padding-top: 2pc;
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+}
+input{
+    margin: 0 auto;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #554a91;
+    border-style: none;
+    font-size: 25px;
+    text-align: center;
+    color: #c5c5c5;
+    cursor: pointer;
+}
+#submit-time{
+    margin: 2pc auto;
+    display: flex;
+    background-color: darkseagreen;
+    color: seagreen;
+}
+#clock{
+    width: 50%;
+    height: 300px;
+    margin: 1pc auto;
+    background-color: #0d1321;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+}
+#clock-display{
+    background-color: darkseagreen;
+    margin: 0 auto;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-family: customFont;
+    font-size: 40px;
+    color: seagreen;
+}
