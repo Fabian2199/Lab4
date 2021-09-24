@@ -1,5 +1,4 @@
 const socket = io();
-const xhr =  new XMLHttpRequest();
 
 function showTime(date){
     var h = date.hour; // 0 - 23
@@ -24,7 +23,13 @@ document.getElementById("submit-time").addEventListener("click", function(){
         minutes:document.getElementById("minute-modifier").value,
         seconds:document.getElementById("second-modifier").value,
     }
-    xhr.open("POST", "http://localhost:4000/timechange", true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify(time));
+    timechange(time);
 });
+function timechange(time){
+    $.ajax({
+        url:'http://localhost:4000/timechange',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(time)
+    }).then(res=> console.log(res))
+}
