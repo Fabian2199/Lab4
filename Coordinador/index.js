@@ -11,7 +11,7 @@ let dateServer = new Date();
 let adjustment = [];
 var servers = [];
 var currentPort = 4001;
-const ip = "http://localhost"
+const ip = "127.0.0.1"
 
 app.listen(port, () => {
 	console.log(`App is listening to port ${port}`);
