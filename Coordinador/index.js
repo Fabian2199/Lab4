@@ -58,7 +58,7 @@ function statusTime() {
       })
       .catch(function (error) {
         // handle error
-        console.log("Fallo aca"+error);
+        console.log("Fallo: "+error);
       });
     });
     setTimeout(() => {
@@ -87,7 +87,7 @@ function berkeley(){
       console.log(response.data.message);
     })
     .catch(function (error) {
-      console.log(error);
+      console.log("Fallo: "error);
     });  
   });
   adjustment.length = 0;
