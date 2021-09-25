@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 app.use(express.json());
-const port = process.env.PORT || 4000;
+const port = 4000;
 
 date = new Date();
 function setTime(hours, minutes, seconds){
