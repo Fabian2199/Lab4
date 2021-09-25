@@ -94,9 +94,9 @@ function berkeley(){
 }
 
 function hourAdjust(ajust, date){
-  let hour = ajust/3600000
-  let minutes = (ajust%3600000)/60000
-  let seconds = ((ajust%3600000)%60000)/1000
+  let hour = parseInt(ajust/3600000)
+  let minutes = parseInt((ajust%3600000)/60000)
+  let seconds = parseInt(((ajust%3600000)%60000)/1000)
   date.setHours(date.getHours()+(hour+1),date.getMinutes()+(minutes+1),date.getSeconds()+seconds)
 }    
 

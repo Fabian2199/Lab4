@@ -71,11 +71,11 @@ app.get('/status', (req, res) => {
 })
 
 function hourAdjust(ajust, date){
-    let hour = ajust/3600000
+    let hour = parseInt(ajust/3600000)
     console.log("hora "+hour)
-    let minutes = (ajust%3600000)/60000
+    let minutes = parseInt((ajust%3600000)/60000)
     console.log("minutos "+minutes)
-    let seconds = ((ajust%3600000)%60000)/1000
+    let seconds = parseInt(((ajust%3600000)%60000)/1000)
     console.log("segundos "+seconds)
     date.setHours(date.getHours()+hour,date.getMinutes()+minutes,date.getSeconds()+seconds) 
 };
