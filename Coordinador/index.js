@@ -136,7 +136,6 @@ function monitor(){
       for (var i = 0; i < lines.length; i++) {
          data = lines[i].split(' ');
          serverIndex = servers.findIndex(ss => ss.port == data[1])
-         console.log(data)
           if(serverIndex != undefined){
               servers[serverIndex].monitor.time = data[0];
                   if (data[2]=="server"){
