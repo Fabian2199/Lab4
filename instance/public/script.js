@@ -14,6 +14,10 @@ function showTime(date){
     document.getElementById("clock-display").textContent = time;
     
 }
+let port = 0000;
+socket.on("port", (arg)=>{
+    port = arg;
+});
 socket.on("time", (arg) =>{
     showTime(arg);
 });
@@ -27,7 +31,7 @@ document.getElementById("submit-time").addEventListener("click", function(){
 });
 function timechange(time){
     $.ajax({
-        url:'http://localhost:4000/timechange',
+        url:`http://localhost:${port}/timechange`,
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(time)

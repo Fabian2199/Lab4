@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 app.use(express.json());
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 date = new Date();
 function setTime(hours, minutes, seconds){
@@ -18,11 +18,12 @@ setInterval(()=>{
         minutes: date.getMinutes(),
         seconds: date.getSeconds()
     }
-    io.emit("time", time); 
+    io.emit("time", time);
+    io.emit("port", port);
 },1000);
 
 const server=  app.listen(port, ()=>{
-    console.log(`AppP is listenign at port ${port}`)
+    console.log(`App is listening at port ${port}`)
     let hours = parseInt(getRandomArbitrary(0,24))
     let minutes = parseInt(getRandomArbitrary(0,60))
     let seconds = parseInt(getRandomArbitrary(0,60))
