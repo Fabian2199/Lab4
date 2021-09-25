@@ -87,7 +87,7 @@ function berkeley(){
       console.log(response.data.message);
     })
     .catch(function (error) {
-      console.log("Fallo: "error);
+      console.log("Fallo: "+error);
     });  
   });
   adjustment.length = 0;
