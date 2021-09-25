@@ -97,7 +97,7 @@ function hourAdjust(ajust, date){
   let hour = parseInt(ajust/3600000)
   let minutes = parseInt((ajust%3600000)/60000)
   let seconds = parseInt(((ajust%3600000)%60000)/1000)
-  date.setHours(date.getHours()+(hour+1),date.getMinutes()+(minutes+1),date.getSeconds()+seconds)
+  date.setHours(date.getHours()+hour,date.getMinutes()+minutes,date.getSeconds()+seconds)
 }    
 
 function addServer(){
