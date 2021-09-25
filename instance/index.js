@@ -54,6 +54,7 @@ app.post('/currentTime',(req,res)=>{
 app.post('/adjust',(req,res)=>{
     let aux = req.body.data;
     let ajust = aux-difference;
+    console.log("ajuste "+ajust)
     hourAdjust(ajust,date);
     /*let info = {
         actualDate: aux,
@@ -71,8 +72,11 @@ app.get('/status', (req, res) => {
 
 function hourAdjust(ajust, date){
     let hour = ajust/3600000
+    console.log("hora "+hour)
     let minutes = (ajust%3600000)/60000
+    console.log("minutos "+minutes)
     let seconds = ((ajust%3600000)%60000)/1000
+    console.log("segundos "+seconds)
     date.setHours(date.getHours()+hour,date.getMinutes()+minutes,date.getSeconds()+seconds) 
 };
 
