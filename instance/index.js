@@ -56,9 +56,9 @@ app.post('/adjust',(req,res)=>{
     let oldDate = new Date(date);
     hourAdjust(ajust,date);
     let info = {
-        oldDate: oldDate,
+        oldDate: " "+oldDate,
         adjust: ajust,
-        newDate : date
+        newDate : " "+date
     }
     console.log(info);
     io.sockets.emit('info', info)
