@@ -1,9 +1,9 @@
 const socket = io();
-
+var h, m, s;
 function showTime(date){
-    var h = date.hour; // 0 - 23
-    var m = date.minutes; // 0 - 59
-    var s = date.seconds; // 0 - 59
+    h = date.hour; // 0 - 23
+    m = date.minutes; // 0 - 59
+    s = date.seconds; // 0 - 59
     
     h = (h < 10) ? "0" + h : h;
     m = (m < 10) ? "0" + m : m;
@@ -27,6 +27,11 @@ document.getElementById("submit-time").addEventListener("click", function(){
         minutes:document.getElementById("minute-modifier").value,
         seconds:document.getElementById("second-modifier").value,
     }
+    document.querySelector('#content').innerHTML += `<tr>
+    <td class="text-center">${h + ":" + m + ":" + s}</td>
+    <td class="text-center">Cambio manual de hora</td>
+    <td class="text-center">${time.hours + ":" + time.minutes + ":" + time.seconds}</td>
+    </tr>`;
     timechange(time);
 });
 function timechange(time){

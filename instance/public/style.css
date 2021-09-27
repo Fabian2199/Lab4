@@ -54,3 +54,133 @@ input{
     font-size: 40px;
     color: seagreen;
 }
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .container-table100 {
+    max-width: 1366px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 33px 100px;
+  }
+  
+  .wrap-table100 {
+    width: 100%;
+  }
+  
+  table {
+    width: 90%;
+    padding-left: 10%;
+    padding-top: 80px;
+  }
+  
+  th, td {
+    font-family: 'Roboto', sans-serif;
+    padding-right: 10px;
+    background-color: #666666;
+    color: #fff;
+  }
+  
+  .column1 {
+    width: 100%;
+    padding-left: 40px;
+  }
+  
+  .column2 {
+    width: 225px;
+    padding-left: 55px;
+  }
+  
+  .table100 th {
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+  
+  .table100 td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  
+  
+  /*==================================================================
+  [ Fix col ]*/
+  .table100 {
+    width: 100%;
+    position: relative;
+  }
+  
+  .table100-firstcol {
+    background-color: #fff;
+    position: absolute;
+    z-index: 1000;
+    width: 310px;
+    top: 0;
+    left: 0;
+  }
+  
+  .table100-firstcol table {
+    background-color: #fff;
+  }
+  
+  .wrap-table100-nextcols {
+    width: 100%;
+    overflow: auto;
+    padding-left: 310px;
+    padding-bottom: 28px;
+  }
+  
+  .table100-nextcols table{
+    table-layout: fixed;
+  }
+  
+  .shadow-table100-firstcol {
+    box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  }
+  
+  .table100-firstcol table {
+    background-color: transparent;
+  }
+  
+  /*==================================================================
+  [ Ver1 ]*/
+  
+  .table100.ver1 th {
+    font-family: Roboto-Bold;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+  
+  .table100.ver1 td {
+    font-family: Roboto-Medium;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+  .table100.ver1 .table100-firstcol td {
+    color: #666666;
+  }
+  
+  .table100.ver1 .table100-nextcols td {
+    color: #999999;
+  }
+  
+  
+  .table100.ver1 tr {
+    border-bottom: 1px solid #f2f2f2;
+  }

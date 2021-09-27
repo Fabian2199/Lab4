@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 app.use(express.json());
-const port = process.env.PORT;
+const port = process.env.PORT || 4001;
 
 date = new Date();
 function setTime(hours, minutes, seconds){
@@ -47,23 +47,22 @@ app.post('/currentTime',(req,res)=>{
     let serverCorDate = new Date(req.body.date)
     console.log('hola '+date)
     difference = date - serverCorDate;
-    console.log(date+'===='+serverCorDate)
-    console.log(difference)
     res.json({difference:difference})
 })
 
 app.post('/adjust',(req,res)=>{
     let aux = req.body.data;
     let ajust = aux-difference;
-    console.log("ajuste "+ajust)
+    let oldDate = new Date(date);
     hourAdjust(ajust,date);
-    /*let info = {
-        actualDate: aux,
-        adjust: req.body.data/1000,
-        newDate : dateServer
+    let info = {
+        oldDate: oldDate,
+        adjust: ajust,
+        newDate : date
     }
+    console.log(info);
     io.sockets.emit('info', info)
-    res.json({message:"Hora ajustada correctamente"})*/
+    //res.json({message:"Hora ajustada correctamente"})
     console.log("date"+ date)
 })
 
